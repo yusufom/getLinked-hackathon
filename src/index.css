@@ -1,13 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+
+@font-face {
+  font-family: "Clash";
+  src: url("./assets/fonts/ClashDisplay-Bold.otf");
+}
+
+:root {
+  --clr-border: #D434FE;
+}
+
+html::-webkit-scrollbar {
+  width: 14px;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: #150E28;
+  border-left: 1px solid #D434FE;
+}
+
+html::-webkit-scrollbar-thumb {
+  height: 3px;
+  border-radius: 8px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+  background-color: #D434FE;
+}
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #150E28;
+  color: white;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; 
+  height: 140px;
+  font-size: 2em;
+  padding: 1em;
+  line-height: 1;
+  background-position:  0 0, 0 0, 100% 0, 0 100%;
+  background-size: 3px 100%, 100% 3px, 3px 100% , 100% 3px;
+  background-repeat: no-repeat;
+}
+
+.box-top { 
+  background-image:
+      linear-gradient(0deg, transparent 10%, transparent 10%, transparent 90%, transparent 90%), 
+      linear-gradient(90deg, transparent 10%, transparent 10%, transparent 90%, transparent 90%), 
+      linear-gradient(180deg, transparent 10%, var(--clr-border) 10%, var(--clr-border) 90%, transparent 90%),
+      linear-gradient(270deg, transparent 10%, var(--clr-border) 10%, var(--clr-border) 90%, transparent 90%)
+  ;
+}
+
+.box-top-right { 
+  background-image:
+      linear-gradient(0deg, transparent 10%, transparent 10%, transparent 90%, transparent 90%), 
+      linear-gradient(90deg, transparent 10%, transparent 10%, transparent 90%, transparent 90%), 
+      linear-gradient(180deg, transparent 10%, transparent 10%, transparent 90%, transparent 90%),
+      linear-gradient(270deg, transparent 10%, var(--clr-border) 10%, var(--clr-border) 90%, transparent 90%)
+  ;
+}
+
+.box-bottom { 
+  background-image:
+      linear-gradient(0deg, transparent 10%, transparent 10%, transparent 90%, transparent 90%), 
+      linear-gradient(90deg, transparent 10%, transparent 10%, transparent 90%, transparent 90%), 
+      linear-gradient(180deg, transparent 10%, var(--clr-border) 10%, var(--clr-border) 90%, transparent 90%),
+      linear-gradient(270deg, transparent 10%, transparent 10%, transparent 90%, transparent 90%)
+  ;
 }
