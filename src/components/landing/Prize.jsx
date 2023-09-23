@@ -4,6 +4,7 @@ import SilverMedal from '../../assets/images/silver_medal.png'
 import GoldMedal from '../../assets/images/gold_medal.png'
 import BronzeMedal from '../../assets/images/bronze_medal.png'
 import { ColoredStars, GreyStars, WhiteStars } from '../common/Stars'
+import { motion } from 'framer-motion'
 
 function Prize() {
     return (
@@ -20,15 +21,21 @@ function Prize() {
             <div className='max-w-[1512px] mx-auto lg:px-[128px] px-[33px] pt-[74px] pb-[150px] gap-x-10'>
                 <div className='lg:flex items-center gap-x-[40px]'>
 
-                    <div className='w-full relative z-50'>
+                    <motion.div className='w-full relative z-50' initial={{ opacity: 0, x: -150 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ type: "spring", duration: 2 }}
+                        viewport={{ once: true }}>
                         <div className='lg:hidden block text-center'>
                             <h2 className='font-Clash text-[20px] font-bold max-w-[174px] mx-auto'>Prizes and <span className='text-primary'>Rewards</span></h2>
                             <p className='text-base leading-[27.344px] max-w-[400px]'>Highlight of the prizes or rewards for winners and for participants</p>
                         </div>
                         <div className="bg-purpleHero flex w-[100px] h-[100px] md:w-[300px] md:h-[300px] right-[10%] blur-[80px] md:blur-[150px]  rounded-full -top-[10%] absolute z-[1]" ></div>
                         <img src={AwardImage} alt="" className='z-50 mt-10 lg:mt-0' />
-                    </div>
-                    <div className='w-full'>
+                    </motion.div>
+                    <motion.div className='w-full' initial={{ opacity: 0, x: 150 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ type: "spring", duration: 2 }}
+                        viewport={{ once: true }}>
                         <div className='hidden lg:block pl-[124px]'>
                             <h2 className='font-Clash text-[32px] font-bold max-w-[174px]'>Prizes and <span className='text-primary'>Rewards</span></h2>
                             <p className='text-base leading-[27.344px] max-w-[400px]'>Highlight of the prizes or rewards for winners and for participants</p>
@@ -76,7 +83,7 @@ function Prize() {
 
 
                         </div>
-                    </div>
+                    </motion.div>
 
 
 

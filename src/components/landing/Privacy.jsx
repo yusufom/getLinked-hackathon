@@ -1,6 +1,7 @@
 import React from 'react'
 import PrivacyImage from '../../assets/images/privacy.png'
 import { ColoredStars, GreyStars, WhiteStars } from '../common/Stars'
+import { motion } from 'framer-motion'
 
 function Privacy() {
     return (
@@ -10,18 +11,24 @@ function Privacy() {
             <div className="bg-purpleHero flex w-[100px] h-[100px] md:w-[400px] md:h-[300px] left-[0%] blur-[80px] md:blur-[150px]  rounded-full bottom-[4%] absolute z-[1]" ></div>
             <div className='max-w-[1512px] mx-auto lg:px-[128px] px-[33px] pt-[93px] pb-[167px] gap-x-10'>
                 <div className='flex lg:flex-row flex-col items-center gap-x-[50px] gap-y-[48px]'>
-                    <div className='w-full relative'>
+                    <motion.div className='w-full relative' initial={{ opacity: 0, x: -150 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ type: "spring", duration: 2 }}
+                        viewport={{ once: true }}>
                         <ColoredStars className={`-left-[14.5%] bottom-[20%] scale-75`} />
                         <GreyStars className={`left-[54.5%] -top-[1%] scale-75`} />
                         <ColoredStars className={`right-[3.5%] top-[11%] scale-50`} />
-                        <div className=''>
+                        <motion.div className='' initial={{ scale: 0 }}
+                            whileInView={{ scale: 1 }}
+                            transition={{ type: "spring", duration: 2 }}
+                            viewport={{ once: true }}>
 
                             <h2 className='lg:text-[32px] text-xl font-Clash font-bold lg:max-w-[300px] max-w-[188px] mx-auto lg:mx-0 text-center lg:text-left'>Privacy Policy and <span className='text-primary'>Terms</span></h2>
                             <p className='lg:text-sm text-xs leading-[27.5px] mt-[17px] text-center lg:text-left'>Last updated on September 12, 2023</p>
                             <p className='lg:text-sm text-xs text-center lg:text-left leading-[26.376px] mt-[30px] max-w-[438px]'>Below are our privacy & policy, which outline a lot of goodies.
                                 it’s our aim to always take of our participant</p>
 
-                        </div>
+                        </motion.div>
 
                         <div className='lg:mt-[70px] mt-[45px] w-full lg:px-[72px] px-4 pt-[60px] pb-[55px] border border-primary rounded-[5px] bg-privacy '>
                             <p className='lg:text-sm text-xs leading-[30.29px] text-center lg:text-left'>At getlinked tech Hackathon 1.0, we value your privacy
@@ -52,14 +59,17 @@ function Privacy() {
 
 
                         </div>
-                    </div>
-                    <div className='w-full relative'>
+                    </motion.div>
+                    <motion.div className='w-full relative' initial={{ opacity: 0, x: 150 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ type: "spring", duration: 2 }}
+                        viewport={{ once: true }}>
                         <WhiteStars className={`right-[23.5%] top-[17%] scale-50`} />
                         <ColoredStars className={`left-[23.5%] top-[60%] scale-50`} />
                         <WhiteStars className={`left-[15.5%] top-[73%] scale-50`} />
                         <GreyStars className={`right-[1%] top-[77%] scale-75`} />
                         <img src={PrivacyImage} alt="" />
-                    </div>
+                    </motion.div>
 
                 </div>
             </div>

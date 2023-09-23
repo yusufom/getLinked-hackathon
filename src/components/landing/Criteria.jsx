@@ -1,6 +1,8 @@
 import React from 'react'
 import criterialImg from '../../assets/images/criteria.png'
 import { ColoredStars, GreyStars, WhiteStars } from '../common/Stars'
+import { motion } from 'framer-motion'
+
 
 function Criteria() {
     return (
@@ -11,11 +13,17 @@ function Criteria() {
 
             <div className='max-w-[1512px] mx-auto lg:px-[128px] px-[33px] mt-[92px] lg:mb-[171px] mb-[60px]'>
                 <div className='flex lg:flex-row flex-col gap-x-[53px] items-center'>
-                    <div className='lg:max-w-[710px] lg:max-h-[587px] w-full relative'>
+                    <motion.div className='lg:max-w-[710px] lg:max-h-[587px] w-full relative' initial={{ opacity: 0, x: -150 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ type: "spring", duration: 2 }}
+                        viewport={{ once: true }}>
                         <div className='absolute w-[134px] h-[134px] rounded-full bg-ballLinear -top-[54px] left-[68px] animate-pulse hidden lg:block'></div>
                         <img src={criterialImg} alt="" className='z-50 relative w-full' />
-                    </div>
-                    <div className='w-full'>
+                    </motion.div>
+                    <motion.div className='w-full' initial={{ opacity: 0, x: 150 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ type: "spring", duration: 2 }}
+                        viewport={{ once: true }}>
                         <div className='lg:max-w-[267px] max-w-[167px] mx-auto lg:mx-0'>
                             
                             <h2 className='text-center lg:text-left font-Clash lg:text-[32px] text-xl font-bold'>Judging Criteria <span className='text-primary'>Key attributes</span></h2>
@@ -36,7 +44,7 @@ function Criteria() {
                         <div className='lg:mt-[55px] mt-[22px] text-center lg:text-left'>
                             <button className='lg:text-base text-xs leading-normal lg:py-4 py-[11px] lg:px-[52px] px-[14px] bg-primaryLinear rounded text-center lg:text-left'>Read More</button>
                         </div>
-                    </div>
+                    </motion.div>
 
                 </div>
             </div>

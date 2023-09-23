@@ -8,6 +8,8 @@ import axios from "axios";
 import { useFormik } from 'formik';
 import { RegisterInitialData, RegisterValidationSchema } from '../helpers/registerForm'
 import SuccessModal from '../components/common/SuccessModal'
+import { motion } from 'framer-motion'
+
 
 
 const categoryMenu = [
@@ -45,6 +47,8 @@ const sizeMenu = [
 ]
 function Register() {
   const [show, setShow] = React.useState(false)
+  const [error, setError] = React.useState(false)
+
   const formik = useFormik(
     {
       initialValues: RegisterInitialData,
@@ -59,6 +63,8 @@ function Register() {
           setShow(true)
         } catch (error) {
           console.error(error);
+          setError(true)
+
 
         }
       }
@@ -87,11 +93,17 @@ function Register() {
 
           <div className='flex lg:flex-row flex-col items-center'>
 
-            <div className='w-full '>
+            <motion.div className='w-full ' initial={{ opacity: 0, x: -150 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ type: "spring", duration: 2 }}
+              viewport={{ once: true }}>
               <img src={RegisterImage} alt="" />
-            </div>
+            </motion.div>
 
-            <div className='w-full'>
+            <motion.div className='w-full' initial={{ opacity: 0, x: 150 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ type: "spring", duration: 2 }}
+              viewport={{ once: true }}>
               <div className='lg:px-[90px] lg:py-[65px] lg:bg-white lg:bg-opacity-[0.03] rounded-xl lg:shadow-register'>
                 <h3 className='font-Clash text-[32px] font-semibold text-primary hidden lg:block'>Register</h3>
 
@@ -112,6 +124,10 @@ function Register() {
 
 
                 <div className='mt-[33px]'>
+                  {error &&
+
+                    <p className='text-sm text-red'>Something went wrong, Please try again later</p>
+                  }
                   <form action="" method="post">
                     <div className='grid lg:grid-cols-2 grid-cols-1 gap-8'>
                       <InputText name={`team_name`} label={`Team's Name`} placeholder={`Enter the name of your group`} value={formik.values.team_name} onChange={formik.handleChange} error={formik.errors.team_name && formik.touched.team_name} errorText={formik.errors.team_name} />
@@ -145,13 +161,13 @@ function Register() {
 
               </div>
 
-            </div>
+            </motion.div>
 
           </div>
 
         </div>
       </main>
-      <SuccessModal show={show} setShow={setShow} title={`Congratulations`} subtitle={`You have successfully registered!`} />
+      <SuccessModal show={show} setShow={setShow} title={`Congratulations`} subtitle={`You have successfully registered!`} register={true} />
 
 
     </>

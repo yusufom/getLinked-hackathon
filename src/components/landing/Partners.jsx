@@ -6,10 +6,11 @@ import Whisper from '../../assets/images/partners/wisper.png'
 import Paybox from '../../assets/images/partners/paybox.png'
 import Vuzual from '../../assets/images/partners/vuzual.png'
 import { ColoredStars, WhiteStars } from '../common/Stars'
+import { motion } from 'framer-motion'
 
 
 function Partners() {
-    
+
 
     return (
         <section className='relative'>
@@ -27,7 +28,12 @@ function Partners() {
 
                 </div>
 
-                <div className='mt-[65px] lg:py-[143px] py-[30px] lg:px-[176px] px-[47px] grid grid-cols-3 lg:mb-[272px] mb-[104px] border border-primary rounded-sm'>
+                <motion.div className='mt-[65px] lg:py-[143px] py-[30px] lg:px-[176px] px-[47px] grid grid-cols-3 lg:mb-[272px] mb-[104px] border border-primary rounded-sm'
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ type: "spring", duration: 2 }}
+                    viewport={{ once: true }}
+                >
 
                     <div className='box box-top p-4'>
                         <img src={Liberty} alt="" />
@@ -53,7 +59,7 @@ function Partners() {
                         <img src={Vuzual} alt="" />
                     </div>
 
-                </div>
+                </motion.div>
             </div>
             <div className='border border-line'></div>
 

@@ -4,12 +4,12 @@ import successImage from "../../assets/images/congratulation.png"
 import successEmoji from "../../assets/images/successemoji.png"
 
 
-const SuccessModal = ({ show, setShow, title, subtitle }) => {
+const SuccessModal = ({ show, setShow, title, subtitle, register }) => {
   const modalRef = useRef(null);
 
-    const handleBack = () => {
-      setShow(false);
-    };
+  const handleBack = () => {
+    setShow(false);
+  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -50,15 +50,19 @@ const SuccessModal = ({ show, setShow, title, subtitle }) => {
           <p>{title}</p>
           <p>{subtitle}</p>
         </h2>
-        <p className="lg:text-sm text-xs text-center lg:font-semibold font-medium">
-          <span>Yes, it was easy and you did it!</span>
-          <span className="flex items-center gap-1">
-            check your mail box for next step
-            <img src={successEmoji} alt="emoji" className="inline" />
-          </span>
-        </p>
+        {register &&
+          <div>
+            <p className="lg:text-sm text-xs text-center lg:font-semibold font-medium">
+              <span>Yes, it was easy and you did it!</span>
+              <span className="flex items-center gap-1">
+                check your mail box for next step
+                <img src={successEmoji} alt="emoji" className="inline" />
+              </span>
+            </p>
+          </div>
+        }
         <button type="submit" className='text-base leading-normal py-4 px-[52px] bg-primaryLinear rounded w-full mt-[22px]' onClick={handleBack}>Back</button>
-        
+
       </motion.div>
     </div>
   );

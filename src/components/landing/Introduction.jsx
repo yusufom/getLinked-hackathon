@@ -11,7 +11,7 @@ function Introduction() {
             <div className='max-w-[1512px] mx-auto lg:px-[128px] px-[63px] lg:mt-[62px] mt-[27px] mb-[78px]'>
                 <div className='flex flex-col lg:flex-row items-center gap-x-[110px] gap-y-[58px]'>
 
-                    <motion.div className='relative' initial={{ opacity: 0, x: -100 }}
+                    <motion.div className='relative' initial={{ opacity: 0, x: -150 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ type: "spring", duration: 2 }}
                         viewport={{ once: true }}>
@@ -20,7 +20,7 @@ function Introduction() {
                         </div>
                         <img src={Arrow} alt="" className='absolute lg:-right-7 lg:-bottom-4 right-1/2 lg:translate-x-0 translate-x-1/2 lg:scale-100 scale-50' />
                     </motion.div>
-                    <motion.div className='mt-[58px] lg:mt-0' initial={{ opacity: 0, x: 100 }}
+                    <motion.div className='mt-[58px] lg:mt-0' initial={{ opacity: 0, x: 150 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ type: "spring", duration: 2 }}
                         viewport={{ once: true }}>

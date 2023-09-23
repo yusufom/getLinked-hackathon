@@ -10,6 +10,8 @@ import axios from "axios";
 import { useFormik } from 'formik';
 import { ContactInitialData, ContactValidationSchema } from '../helpers/contactForm'
 import SuccessModal from '../components/common/SuccessModal'
+import { motion } from 'framer-motion'
+
 
 function Contact() {
   const [show, setShow] = React.useState(false)
@@ -25,6 +27,7 @@ function Contact() {
 
           );
           console.log(response.data)
+          setShow(true)
         } catch (error) {
           console.error(error);
           setError(true)
@@ -55,7 +58,10 @@ function Contact() {
 
           <div className='flex lg:flex-row flex-col items-center gap-x-[222px]'>
 
-            <div className='lg:w-1/3 hidden lg:block'>
+            <motion.div className='lg:w-1/3 hidden lg:block' initial={{ opacity: 0, x: -150 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ type: "spring", duration: 2 }}
+              viewport={{ once: true }}>
 
               <h3 className='font-Clash text-primary text-[32px] font-semibold'>Get in touch</h3>
 
@@ -86,9 +92,12 @@ function Contact() {
 
               </div>
 
-            </div>
+            </motion.div>
 
-            <div className='w-full'>
+            <motion.div className='w-full' initial={{ opacity: 0, x: 150 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ type: "spring", duration: 2 }}
+              viewport={{ once: true }}>
               <div className='lg:px-[90px] lg:py-[65px] lg:bg-white lg:bg-opacity-[0.03] rounded-xl lg:shadow-register'>
                 <h3 className='font-Clash text-[20px] font-semibold text-primary leading-normal lg:max-w-none max-w-[195px]'>Questions or need assistance?</h3>
 
@@ -100,8 +109,8 @@ function Contact() {
 
                 <div className='mt-[33px]'>
                   {error &&
-                  
-                  <p className='text-sm text-red'>Something went wrong, Please try again later</p>
+
+                    <p className='text-sm text-red'>Something went wrong, Please try again later</p>
                   }
                   <form action="" method="post">
                     <div className='grid grid-cols-1 gap-8'>
@@ -144,7 +153,7 @@ function Contact() {
 
               </div>
 
-            </div>
+            </motion.div>
 
           </div>
 
@@ -152,7 +161,7 @@ function Contact() {
       </main>
 
 
-      <SuccessModal show={show} setShow={setShow} title={`Congratulations`} subtitle={`Your email has been set`} />
+      <SuccessModal show={show} setShow={setShow} title={`Congratulations`} subtitle={`Your email has been sent`} />
 
     </div>
   )

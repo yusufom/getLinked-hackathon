@@ -2,6 +2,8 @@ import React from 'react'
 import FAWImg from '../../assets/images/cwok.png'
 import Accordion from '../common/Accordion'
 import { GreyStars, WhiteStars, ColoredStars } from '../common/Stars'
+import { motion } from 'framer-motion'
+
 
 
 function Faqs() {
@@ -17,7 +19,10 @@ function Faqs() {
             <div className='max-w-[1512px] mx-auto lg:px-[128px] px-[33px] mt-[43px] mb-[63px]'>
 
                 <div className='flex lg:flex-row flex-col lg:justify-between lg:items-center gap-y-[66px]'>
-                    <div className='lg:max-w-[427px]'>
+                    <motion.div className='lg:max-w-[427px]' initial={{ opacity: 0, x: -150 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ type: "spring", duration: 2 }}
+                        viewport={{ once: true }}>
                         <div className='w-full text-center lg:text-left'>
                             <h2 className='lg:max-w-[253px] max-w-[158px] mx-auto lg:mx-0 font-Clash lg:text-[32px] text-xl font-bold'>Frequently Ask <span className='text-primary'>Question</span></h2>
                             <p className='max-w-[342px] text-xs lg:text-sm leading-[27.5px] mt-4'>We got answers to the questions that you might
@@ -62,15 +67,18 @@ function Faqs() {
                             </Accordion>
                         </div>
 
-                    </div>
-                    <div className='max-w-[741px] max-h-[789px] relative'>
+                    </motion.div>
+                    <motion.div className='max-w-[741px] max-h-[789px] relative' initial={{ opacity: 0, x: 150 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ type: "spring", duration: 2 }}
+                        viewport={{ once: true }}>
                         <ColoredStars className={`right-[47.5%] top-[5%] scale-50`} />
                         <ColoredStars className={`left-[20.5%] top-[25%] scale-50`} />
                         <GreyStars className={`left-[7%] top-[55%]`} />
                         <WhiteStars className={`right-[22%] -bottom-[4%]`} />
 
                         <img src={FAWImg} alt="" className='w-full h-full' />
-                    </div>
+                    </motion.div>
 
                 </div>
 

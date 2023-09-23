@@ -1,24 +1,34 @@
 import React from 'react'
 import { ColoredStars, GreyStars, WhiteStars } from '../common/Stars';
+import { motion } from 'framer-motion';
 
 
 const TimelineItem = ({ date, title, number, isEven, description }) => {
     return (
         <>
             <div className={`lg:flex hidden ${isEven ? 'flex-row-reverse' : 'flex-row'} mt-6 mb-6 justify-center gap-x-[90px] items-center`}>
-                <div className='w-full'>
+                <motion.div className='w-full' initial={{ opacity: 0, x: -150 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ type: "spring", duration: 2 }}
+                    viewport={{ once: true }}>
                     <h3 className={`text-2xl  text-primary font-bold leading-normal ${isEven ? 'text-left' : 'text-right'}`}>{title}</h3>
                     <p className={`${isEven ? 'text-left mr-auto' : 'text-right ml-auto'} max-w-[436px]   text-base leading-[23.926px] mt-3`}>{description}</p>
-                </div>
-                <div className='relative'>
+                </motion.div>
+                <motion.div className='relative' initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ type: "spring", duration: 2 }}
+                    viewport={{ once: true }}>
                     <div className="absolute border-primary h-20 border -top-24 left-1/2 -z-40"></div>
                     <div className="w-[53px] h-[53px] mx-auto rounded-full bg-timelineLinear text-white font-bold flex items-center justify-center text-2xl leading-normal">
                         {number}
                     </div>
-                </div>
-                <div className=' w-full'>
+                </motion.div>
+                <motion.div className=' w-full' initial={{ opacity: 0, x: 150 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ type: "spring", duration: 2 }}
+                    viewport={{ once: true }}>
                     <p className={`text-2xl  text-primary font-bold leading-normal ${isEven ? 'text-right' : 'text-left'}`}>{date}</p>
-                </div>
+                </motion.div>
 
             </div>
             <div className={`flex lg:hidden mt-6 mb-6 justify-center gap-x-[10px] items-end`}>
