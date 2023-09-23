@@ -39,6 +39,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #150E28;
   color: white;
+  overflow-x: hidden;
 }
 
 code {
@@ -51,9 +52,8 @@ code {
   justify-content: center;
   align-items: center;
   width: 100%; 
-  height: 140px;
   font-size: 2em;
-  padding: 1em;
+  /* padding: 1em; */
   line-height: 1;
   background-position:  0 0, 0 0, 100% 0, 0 100%;
   background-size: 3px 100%, 100% 3px, 3px 100% , 100% 3px;

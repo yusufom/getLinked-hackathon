@@ -9,7 +9,7 @@ import { ColoredStars, GreyStars, WhiteStars } from '../common/Stars'
 
 function Footer() {
     return (
-        <footer className='bg-[#100B20] relative'>
+        <footer className='lg:bg-[#100B20] relative'>
             <WhiteStars className={`left-[7.5%] top-[27%] scale-50`} />
             <GreyStars className={`right-[30.5%] top-[27%] scale-75`} />
             <ColoredStars className={`left-[45.5%] bottom-[22%] scale-50`} />

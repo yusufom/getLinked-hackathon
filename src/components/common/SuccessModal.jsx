@@ -1,13 +1,15 @@
 import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
+import successImage from "../../assets/images/congratulation.png"
+import successEmoji from "../../assets/images/successemoji.png"
 
 
-const SuccessModal = ({ show, setShow, title }) => {
+const SuccessModal = ({ show, setShow, title, subtitle }) => {
   const modalRef = useRef(null);
 
-//   const handleBack = () => {
-//     setShow(false);
-//   };
+    const handleBack = () => {
+      setShow(false);
+    };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -32,58 +34,31 @@ const SuccessModal = ({ show, setShow, title }) => {
 
   return (
     <div
-      className={`fixed top-0 right-0 w-full h-full bg-[#150e28ed] z-40 place-items-center flex justify-center transition-all duration-500 overflow-auto ${
-        show ? "flex" : "hidden"
-      }`}
+      className={`fixed z-[99] top-0 right-0 w-full h-full bg-[#150e28ed] place-items-center flex justify-center transition-all duration-500 overflow-auto ${show ? "flex" : "hidden"
+        }`}
     >
-      <img
-        src="/icon/purplestarIcon.png"
-        alt="star"
-        className="absolute top-0 right-[24.5%] z-40"
-        width={20}
-        height={20}
-      />
+
       <motion.div
         ref={modalRef}
         animate={show ? "open" : "closed"}
         variants={variants}
-        className="relative tab:w-[660px] w-[90%] bg-[#ffffff03] rounded-[5px] border border-primary flex flex-col items-center justify-center gap-3 transition-all duration-300 tab:h-[580px] overflow-y-auto overflow-x-hidden"
+        className="relative lg:w-[660px] w-[90%] bg-[#ffffff03] rounded-[5px] border border-primary flex flex-col items-center justify-center gap-3 transition-all duration-300  overflow-y-auto overflow-x-hidden lg:px-[54px] px-[34px] py-[27px] lg:py-[70px]"
       >
-        <img
-          src="/icon/graystar.png"
-          alt="star"
-          className="absolute top-60 left-20"
-          width={20}
-          height={20}
-        />
-        <img
-          src="/icon/purplestarIcon.png"
-          alt="star"
-          className="absolute bottom-5 right-8"
-          width={20}
-          height={20}
-        />
-        <img
-          src="/img/sucessImg.png"
-          alt="successfully"
-          className="tab:w-[400px] object-cover"
-        />
-        <h2 className="text-base text-center font-semibold md:text-xl tab:text-2xl">
-          {title}
+        <img src={successImage} alt="" />
+
+        <h2 className="lg:text-[32px] text-base text-center font-semibold md:text-xl tab:text-2xl">
+          <p>{title}</p>
+          <p>{subtitle}</p>
         </h2>
-        <p className="text-sm text-center font-semibold">
+        <p className="lg:text-sm text-xs text-center lg:font-semibold font-medium">
           <span>Yes, it was easy and you did it!</span>
           <span className="flex items-center gap-1">
             check your mail box for next step
-            <img src="/icon/emoji.png" alt="emoji" className="inline" />
+            <img src={successEmoji} alt="emoji" className="inline" />
           </span>
         </p>
-        {/* <CustomizeButton
-          text="Back"
-          onClick={handleBack}
-          className="bg-btnlinear border-none rounded !px-10 !py-3 w-[80%] my-4"
-          type="button"
-        /> */}
+        <button type="submit" className='text-base leading-normal py-4 px-[52px] bg-primaryLinear rounded w-full mt-[22px]' onClick={handleBack}>Back</button>
+        
       </motion.div>
     </div>
   );

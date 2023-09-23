@@ -18,8 +18,8 @@ function Faqs() {
 
                 <div className='flex lg:flex-row flex-col lg:justify-between lg:items-center gap-y-[66px]'>
                     <div className='lg:max-w-[427px]'>
-                        <div className='w-full text-center'>
-                            <h2 className='lg:max-w-[253px] max-w-[158px] mx-auto font-Clash lg:text-[32px] text-xl font-bold'>Frequently Ask <span className='text-primary'>Question</span></h2>
+                        <div className='w-full text-center lg:text-left'>
+                            <h2 className='lg:max-w-[253px] max-w-[158px] mx-auto lg:mx-0 font-Clash lg:text-[32px] text-xl font-bold'>Frequently Ask <span className='text-primary'>Question</span></h2>
                             <p className='max-w-[342px] text-xs lg:text-sm leading-[27.5px] mt-4'>We got answers to the questions that you might
                                 want to ask about getlinked Hackathon 1.0</p>
                         </div>

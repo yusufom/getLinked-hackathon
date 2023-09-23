@@ -3,6 +3,7 @@ import HeroMan from '../../assets/images/hero.png'
 import Chain from '../../assets/svgs/chain.svg'
 import Bomb from '../../assets/svgs/bomb.svg'
 import { GreyStars, WhiteStars } from '../common/Stars'
+import { NavLink } from 'react-router-dom'
 
 function Hero() {
     return (
@@ -13,9 +14,9 @@ function Hero() {
 
             <section className='relative'>
 
-                <WhiteStars className={`left-[20%] top-[10%]`} />
-                <GreyStars className={`right-[35%] top-[20%]`} />
-                <GreyStars className={`right-[58%] bottom-[20%]`} />
+                <WhiteStars className={`left-[20%] top-[10%] lg:scale-100 scale-50`} />
+                <GreyStars className={`lg:right-[35%] lg:top-[20%] right-[10%] top-[10%] lg:scale-100 scale-50`} />
+                <GreyStars className={`lg:right-[58%] lg:bottom-[20%] lg:scale-100 scale-[0.3] bottom-[58%] right-[20%]`} />
 
 
                 <div className='w-[1164px] h-[801px] bg-metrix absolute bottom-0 right-0 -z-20 hidden lg:block'></div>
@@ -25,17 +26,17 @@ function Hero() {
                     <p>Igniting a Revolution in<span className='relative lg:after:left-0 after:right-7 inline:flex after:absolute lg:after:-bottom-8 after:-bottom-6 after:block after:content-curved after:w-full lg:after:scale-100 after:scale-50'> HR innovation</span></p>
                 </div>
 
-                <div className='flex lg:flex-row flex-col justify-center items-center mt-[50px] lg:pl-[128px] pl-[33px] pr-[33px] lg:pr-0'>
-                    <div className='text-center lg:text-left'>
+                <div className='flex lg:flex-row flex-col justify-center items-center mt-[50px] lg:pl-[128px] lg:pr-0'>
+                    <div className='text-center lg:text-left px-[33px] lg:px-0'>
                         <h1 className='font-Clash lg:text-[80px] text-[32px]'>getlinked Te<span className='relative inline-block before:block before:absolute before:content-bulb before:-top-12 lg:before:-right-5 before:w-full  before:scale-50'>c</span>h
                         </h1>
                         <div className='flex justify-center lg:justify-normal'>
                             <div className='flex items-center text-center lg-text-left'>
                                 <h1 className='font-Clash lg:text-[80px] text-[32px]'>Hackathon <span className='text-primary'>1.0</span></h1>
-                                <div className='w-[32px] lg:w-full'>
+                                <div className='w-[32px] lg:w-[87px]'>
                                     <img src={Chain} alt="" className='' />
                                 </div>
-                                <div className='w-[32px] lg:w-full'>
+                                <div className='w-[32px] lg:w-[87px]'>
                                     <img src={Bomb} alt="" />
                                 </div>
                             </div>
@@ -46,7 +47,9 @@ function Hero() {
                         </div>
 
                         <div className='mt-10'>
-                            <button className='lg:text-base text-sm leading-normal lg:py-4 py-[14px] lg:px-[52px] px-[48px] bg-primaryLinear rounded'>Register</button>
+                            <NavLink to={`/register`} >
+                                <button className='lg:text-base text-sm leading-normal lg:py-4 py-[14px] lg:px-[52px] px-[48px] bg-primaryLinear rounded'>Register</button>
+                            </NavLink>
                         </div>
 
                         <div className='flex justify-center lg:justify-normal'>
@@ -58,8 +61,8 @@ function Hero() {
                         </div>
                     </div>
 
-                    <div className="lg:max-w-[828px] max-w-[420px] w-full lg:h-[720px] h-[362.395px] bg-cover -z-10 bg-blend-luminosity relative">
-                        <div className='lg:w-[670px] lg:h-[641px] w-[338px] h-[324px] bg-cover flex-shrink-0 bg-earth  bg-blend-hard-light -z-30 animate-spin-slow'></div>
+                    <div className="lg:max-w-[828px] max-w-[420px] w-full lg:h-[720px] h-[362.395px]  bg-cover -z-10 bg-blend-luminosity relative">
+                        <div className='lg:w-[670px] lg:h-[641px] w-[328px] h-[294px] bg-cover flex-shrink-0 bg-earth  bg-blend-hard-light -z-30 animate-spin-slow'></div>
                         <img src={HeroMan} alt="" className='w-full h-full absolute top-0 -z-40 grayscale' />
                     </div>
 

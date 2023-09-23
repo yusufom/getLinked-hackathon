@@ -34,39 +34,39 @@ function Prize() {
                             <p className='text-base leading-[27.344px] max-w-[400px]'>Highlight of the prizes or rewards for winners and for participants</p>
                         </div>
 
-                        <div className='flex lg:gap-x-[30px] gap-x-[13px] lg:pt-[270px] pt-[140px]'>
+                        <div className='flex justify-center lg:gap-x-[30px] gap-x-[13px] lg:pt-[270px] pt-[140px]'>
 
-                            <div className='lg:pt-[111px] pt-[41px] lg:pb-[33px] pb-[22px] lg:px-[25px] px-[9px] bg-[#903AFF] bg-opacity-[12%] rounded-lg text-center border border-[#903AFF] relative mb-4'>
+                            <div className='lg:pt-[111px] pt-[41px] lg:pb-[33px] pb-[22px] lg:px-[25px] px-[10px] bg-[#903AFF] bg-opacity-[12%] rounded-lg text-center border border-[#903AFF] relative mb-4'>
                                 <div className='absolute lg:-top-24 -top-12 w-[75px] h-[75px] lg:w-full lg:h-full'>
                                     <img src={SilverMedal} alt="" />
                                 </div>
                                 <div>
-                                    <h3 className='lg:text-4xl text-sm font-bold leading-[77.904px]'>2nd</h3>
+                                    <h3 className='lg:text-4xl text-sm font-bold lg:leading-[77.904px] leading-[25.968px]'>2nd</h3>
                                     <h4 className='lg:text-2xl text-sm font-semibold '>Runner</h4>
                                     <h1 className='lg:text-[32px] text-sm font-bold text-primary'>N300,000</h1>
                                 </div>
 
                             </div>
 
-                            <div className='lg:pt-[111px] pt-[41px] lg:pb-[33px] pb-[22px] lg:px-[25px] px-[9px] bg-[#903AFF] bg-opacity-[12%] rounded-lg text-center border border-[#903AFF] relative mt-4'>
-                                <div className='absolute lg:-top-[190px] -top-[80px] left-1/2 -translate-x-1/2 lg:w-[296px] w-[125px]'>
+                            <div className='lg:pt-[111px] pt-[41px] lg:pb-[33px] pb-[22px] lg:px-[25px] px-[10px] bg-[#903AFF] bg-opacity-[12%] rounded-lg text-center border border-[#903AFF] relative mt-4'>
+                                <div className='absolute lg:-top-[190px] -top-[90px] left-1/2 -translate-x-1/2 lg:w-[296px] w-[125px]'>
                                     <img src={GoldMedal} alt="" />
                                 </div>
                                 <div>
-                                    <h3 className='lg:text-4xl text-sm font-bold leading-[77.904px]'>1st</h3>
+                                    <h3 className='lg:text-4xl text-sm font-bold lg:leading-[77.904px] leading-[25.968px]'>1st</h3>
                                     <h4 className='lg:text-2xl text-sm font-semibold '>Runner</h4>
                                     <h1 className='lg:text-[32px] text-sm font-bold text-[#903AFF]'>N400,000</h1>
                                 </div>
 
                             </div>
 
-                            <div className='lg:pt-[111px] pt-[41px] lg:pb-[33px] pb-[22px] lg:px-[25px] px-[9px] bg-[#903AFF] bg-opacity-[12%] rounded-lg text-center border border-[#903AFF] relative mb-4'>
+                            <div className='lg:pt-[111px] pt-[41px] lg:pb-[33px] pb-[22px] lg:px-[25px] px-[10px] bg-[#903AFF] bg-opacity-[12%] rounded-lg text-center border border-[#903AFF] relative mb-4'>
                                 <div className='absolute lg:-top-24 -top-12 w-[75px] h-[75px] lg:w-full lg:h-full'>
 
                                     <img src={BronzeMedal} alt="" />
                                 </div>
                                 <div>
-                                    <h3 className='lg:text-4xl text-sm  font-bold leading-[77.904px]'>3rd</h3>
+                                    <h3 className='lg:text-4xl text-sm  font-bold lg:leading-[77.904px] leading-[25.968px]'>3rd</h3>
                                     <h4 className='lg:text-2xl text-sm  font-semibold '>Runner</h4>
                                     <h1 className='lg:text-[32px] text-sm font-bold text-primary'>N150,000</h1>
                                 </div>

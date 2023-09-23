@@ -9,6 +9,8 @@ import { ColoredStars, WhiteStars } from '../common/Stars'
 
 
 function Partners() {
+    
+
     return (
         <section className='relative'>
             <ColoredStars className={`left-[22.5%] top-[11%] scale-75`} />
@@ -17,7 +19,7 @@ function Partners() {
 
             <div className="bg-purpleHero flex w-[100px] h-[100px] md:w-[300px] md:h-[300px] right-[0%] blur-[80px] md:blur-[150px]  rounded-full -bottom-[10%] absolute z-[1]" ></div>
             <div className="bg-purpleHero flex w-[100px] h-[100px] md:w-[500px] md:h-[300px] left-[0%] blur-[80px] md:blur-[150px]  rounded-full top-[3%] absolute z-[1]" ></div>
-            <div className='max-w-[1512px] mx-auto lg:px-[128px] px-[33px] lg:mt-[114px] mt-[41px] pb-[150px] gap-x-10'>
+            <div className='max-w-[1512px] mx-auto lg:px-[128px] px-[33px] lg:mt-[114px] mt-[41px] lg:pb-[150px] gap-x-10'>
                 <div className='text-center'>
                     <h2 className='font-Clash lg:text-[32px] text-xl font-bold leading-[27px]'>Partners and Sponsors</h2>
                     <p className='mt-[22px] lg:text-sm text-xs lg:leading-[27px] leading-5 max-w-[452px] mx-auto'>Getlinked Hackathon 1.0 is honored to have the following major
@@ -25,29 +27,29 @@ function Partners() {
 
                 </div>
 
-                <div className='mt-[65px] lg:py-[143px] py-[38px] lg:px-[176px] px-[47px] grid grid-cols-3 mb-[272px] border border-primary rounded-sm'>
+                <div className='mt-[65px] lg:py-[143px] py-[30px] lg:px-[176px] px-[47px] grid grid-cols-3 lg:mb-[272px] mb-[104px] border border-primary rounded-sm'>
 
-                    <div className='box box-top'>
+                    <div className='box box-top p-4'>
                         <img src={Liberty} alt="" />
                     </div>
 
-                    <div className='box box-top'>
+                    <div className='box box-top p-4'>
                         <img src={LibertyPay} alt="" />
                     </div>
 
-                    <div className='box box-top-right'>
+                    <div className='box box-top-right p-4'>
                         <img src={Winwise} alt="" />
                     </div>
 
-                    <div className='box box-bottom'>
+                    <div className='box box-bottom p-4'>
                         <img src={Whisper} alt="" />
                     </div>
 
-                    <div className='box box-bottom'>
+                    <div className='box box-bottom p-4'>
                         <img src={Paybox} alt="" />
                     </div>
 
-                    <div className='box'>
+                    <div className='box p-4'>
                         <img src={Vuzual} alt="" />
                     </div>
 

@@ -15,7 +15,7 @@ function Rules() {
                     <div className='w-full'>
                         <h2 className='lg:text-[32px] text-xl font-Clash font-bold max-w-[170px] mx-auto lg:mx-0'>Rules and <span className='text-primary'>Guidelines</span></h2>
 
-                        <p className='mt-4 lg:text-sm text-xs font-normal text-center leading-[27.5px] max-w-[300px] lg:max-w-none mx-auto lg:mx-0'>Our tech hackathon is a melting pot of visionaries, and its purpose is as
+                        <p className='mt-4 lg:text-sm text-xs font-normal text-center lg:text-left leading-[27.5px] max-w-[300px] lg:max-w-none mx-auto lg:mx-0'>Our tech hackathon is a melting pot of visionaries, and its purpose is as
                             clear as day: to shape the future. Whether you're a coding genius, a
                             design maverick, or a concept wizard, you'll have the chance to transform
                             your ideas into reality. Solving real-world problems, pushing the boundaries
