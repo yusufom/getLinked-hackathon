@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-scroll'
 import { NavLink, useLocation, useNavigate } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 
 const navLinks = [
@@ -33,7 +34,10 @@ function Navbar({ landing }) {
         }
     }, [location, navigate])
     return (
-        <nav className={`max-w-[1512px] mx-auto`}>
+        <motion.nav className={`max-w-[1512px] mx-auto`} initial={{ opacity: 0, y: -50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", duration: 2 }}
+            viewport={{ once: true }}>
             <div className='flex justify-between items-center lg:pt-[63px] pt-[30px] lg:pb-[25px] pb-[23px] lg:px-[128px] px-[48px]'>
                 <NavLink to={`/`} className={`z-[70]`}>
                     <p className='font-Clash lg:text-4xl text-base font-bold leading-normal'>get<span className='text-primary'>linked</span></p>
@@ -109,7 +113,7 @@ function Navbar({ landing }) {
 
 
             </div>
-        </nav>
+        </motion.nav>
     )
 }
 

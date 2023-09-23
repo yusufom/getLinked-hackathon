@@ -4,6 +4,7 @@ import Chain from '../../assets/svgs/chain.svg'
 import Bomb from '../../assets/svgs/bomb.svg'
 import { GreyStars, WhiteStars } from '../common/Stars'
 import { NavLink } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 function Hero() {
     return (
@@ -22,12 +23,18 @@ function Hero() {
                 <div className='w-[1164px] h-[801px] bg-metrix absolute bottom-0 right-0 -z-20 hidden lg:block'></div>
                 <div className='border border-line'></div>
 
-                <div className='mt-8 lg:pr-[55px] flex lg:justify-end justify-center lg:text-4xl text-base italic font-bold leading-normal'>
+                <motion.div className='mt-8 lg:pr-[55px] flex lg:justify-end justify-center lg:text-4xl text-base italic font-bold leading-normal' initial={{ opacity: 0, x: 150 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ type: "spring", duration: 2 }}
+                    viewport={{ once: true }}>
                     <p>Igniting a Revolution in<span className='relative lg:after:left-0 after:right-7 inline:flex after:absolute lg:after:-bottom-8 after:-bottom-6 after:block after:content-curved after:w-full lg:after:scale-100 after:scale-50'> HR innovation</span></p>
-                </div>
+                </motion.div>
 
                 <div className='flex lg:flex-row flex-col justify-center items-center mt-[50px] lg:pl-[128px] lg:pr-0'>
-                    <div className='text-center lg:text-left px-[33px] lg:px-0'>
+                    <motion.div className='text-center lg:text-left px-[33px] lg:px-0' initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ type: "spring", duration: 2 }}
+                        viewport={{ once: true }}>
                         <h1 className='font-Clash lg:text-[80px] text-[32px]'>getlinked Te<span className='relative inline-block before:block before:absolute before:content-bulb before:-top-12 lg:before:-right-5 before:w-full  before:scale-50'>c</span>h
                         </h1>
                         <div className='flex justify-center lg:justify-normal'>
@@ -59,18 +66,21 @@ function Hero() {
                                 <p>00<small className='text-sm'>S</small></p>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
-                    <div className="lg:max-w-[828px] max-w-[420px] w-full lg:h-[720px] h-[362.395px]  bg-cover -z-10 bg-blend-luminosity relative">
+                    <motion.div className="lg:max-w-[828px] max-w-[420px] w-full lg:h-[720px] h-[362.395px]  bg-cover -z-10 bg-blend-luminosity relative" initial={{ opacity: 0, y: -50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ type: "spring", duration: 2 }}
+                        viewport={{ once: true }}>
                         <div className='lg:w-[670px] lg:h-[641px] w-[328px] h-[294px] bg-cover flex-shrink-0 bg-earth  bg-blend-hard-light -z-30 animate-spin-slow'></div>
                         <img src={HeroMan} alt="" className='w-full h-full absolute top-0 -z-40 grayscale' />
-                    </div>
+                    </motion.div>
 
                 </div>
 
                 <div className='border border-line'></div>
 
-            </section>
+            </section >
 
         </>
     )
