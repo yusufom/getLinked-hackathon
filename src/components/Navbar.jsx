@@ -28,12 +28,12 @@ function Navbar({ landing }) {
         }
     }, [location, navigate])
     return (
-        <nav className='max-w-[1512px] mx-auto px-[128px]'>
-            <div className='flex justify-between items-center pt-[63px] pb-[25px]'>
+        <nav className='max-w-[1512px] mx-auto lg:px-[128px] px-[48px]'>
+            <div className='flex justify-between items-center lg:pt-[63px] pt-[30px] lg:pb-[25px] pb-[23px]'>
                 <NavLink to={`/`}>
-                    <p className='font-Clash text-4xl font-bold leading-normal'>get<span className='text-primary'>linked</span></p>
+                    <p className='font-Clash lg:text-4xl text-base font-bold leading-normal'>get<span className='text-primary'>linked</span></p>
                 </NavLink>
-                <div className='flex gap-x-[121px] items-center'>
+                <div className='lg:flex gap-x-[121px] items-center hidden'>
                     <ul className='flex gap-x-14 items-center'>
                         {landing ?
 
@@ -62,6 +62,8 @@ function Navbar({ landing }) {
                     </NavLink>
 
                 </div>
+
+                <div className='w-10 h-10 bg-white'></div>
             </div>
         </nav>
     )

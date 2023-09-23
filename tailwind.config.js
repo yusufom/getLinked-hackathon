@@ -42,7 +42,7 @@ module.exports = {
         'register': '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
       },
       animation: {
-        'spin-slow': 'spin 550s linear infinite',
+        'spin-slow': 'spin 250s linear infinite',
       }
     },
   },

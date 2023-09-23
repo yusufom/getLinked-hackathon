@@ -15,24 +15,24 @@ function Footer() {
             <ColoredStars className={`left-[45.5%] bottom-[22%] scale-50`} />
             <WhiteStars className={`right-[10.5%] bottom-[27%] scale-75`} />
 
-            <div className='max-w-[1512px] mx-auto px-[128px] pt-[93px] pb-[1px] gap-x-10'>
+            <div className='max-w-[1512px] mx-auto lg:px-[128px] px-[68px] pt-[93px] pb-[1px] gap-x-10'>
 
-                <div className='flex justify-between '>
+                <div className='flex lg:flex-row flex-col justify-between gap-y-[32px] '>
 
-                    <div className='w-1/3'>
-                        <p className='font-Clash text-3xl font-bold leading-normal'>get<span className='text-primary'>linked</span></p>
-                        <p className='text-xs leading-5'>Getlinked Tech Hackathon is a technology innovation program
+                    <div className='lg:w-1/3'>
+                        <p className='font-Clash lg:text-3xl text-xl font-bold leading-normal'>get<span className='text-primary'>linked</span></p>
+                        <p className='text-xs leading-5 mt-3 lg:mt-0'>Getlinked Tech Hackathon is a technology innovation program
                             established by a group of organizations with the aim of showcasing
                             young and talented individuals in the field of technology
                         </p>
-                        <div className='mt-[74px] flex text-sm'>
+                        <div className='mt-[74px] flex lg:text-sm text-xs'>
                             <p className='pr-4'>Terms of Use</p>
                             <div className='h-auto w-[2px] bg-primary'></div>
                             <p className='px-4'>Privacy Policy</p>
                         </div>
                     </div>
 
-                    <div className='w-1/3'>
+                    <div className='lg:w-1/3'>
                         <h4 className='text-primary font-semibold text-sm leading-6'>Useful Links</h4>
 
                         <div className='text-xs leading-5 space-y-4 mt-[6px]'>
@@ -50,7 +50,7 @@ function Footer() {
                         </div>
                     </div>
 
-                    <div className=''>
+                    <div className='mt-[30px] lg:mt-0'>
                         <h4 className='text-primary font-semibold text-sm leading-6'>Contact Us</h4>
 
                         <div className='mt-5 space-y-[22px]'>

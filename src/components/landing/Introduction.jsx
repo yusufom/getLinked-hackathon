@@ -7,22 +7,22 @@ function Introduction() {
         <section name={`/#Overview`} id='Overview' className='relative'>
             <ColoredStars className={`left-[15%] top-[30%] scale-50`} />
             <ColoredStars className={`right-[15%] top-[25%] scale-75`} />
-            <div className='max-w-[1512px] mx-auto px-[128px] mt-[62px] mb-[78px]'>
-                <div className='flex items-center gap-x-[110px]'>
+            <div className='max-w-[1512px] mx-auto lg:px-[128px] px-[63px] lg:mt-[62px] mt-[27px] mb-[78px]'>
+                <div className='flex flex-col lg:flex-row items-center gap-x-[110px] gap-y-[58px]'>
 
                     <div className='relative'>
-                        <div className='bg-idea w-[490px] h-[477px] flex justify-center items-center bg-cover'>
-                            <p className='text-2xl font-bold leading-[29.4px] max-w-[144px] text-center mt-8'>The Big Idea!</p>
+                        <div className='bg-idea lg:w-[490px] lg:h-[477px] w-[264px] h-[257px] flex justify-center items-center bg-cover'>
+                            <p className='lg:text-2xl text-sm font-bold lg:leading-[29.4px] leading-[17px] lg:max-w-[144px] max-w-[78px] text-center mt-8'>The Big Idea!</p>
                         </div>
-                        <img src={Arrow} alt="" className='absolute -right-7 -bottom-4' />
+                        <img src={Arrow} alt="" className='absolute lg:-right-7 lg:-bottom-4 left-1/2 -translate-x-1/2 lg:scale-100 scale-50' />
                     </div>
-                    <div>
-                        <div className='text-[32px] leading-none font-Clash'>
-                            <h2 className='max-w-[398px]'>Introduction to getlinked <span className='text-primary'>tech Hackathon 1.0</span></h2>
+                    <div className='mt-[58px] lg:mt-0'>
+                        <div className='lg:text-[32px] text-xl text-center lg:text-left leading-none font-Clash'>
+                            <h2 className='lg:max-w-[398px] max-w-[249px] mx-auto'>Introduction to getlinked <span className='text-primary'>tech Hackathon 1.0</span></h2>
 
                         </div>
                         <div className='mt-4'>
-                            <p className='text-sm leading-[27.5px]'>Our tech hackathon is a melting pot of visionaries, and its purpose is as
+                            <p className='lg:text-sm text-[13px] leading-[27.5px] text-center lg:text-left'>Our tech hackathon is a melting pot of visionaries, and its purpose is as
                                 clear as day: to shape the future. Whether you're a coding genius, a
                                 design maverick, or a concept wizard, you'll have the chance to transform
                                 your ideas into reality. Solving real-world problems, pushing the boundaries

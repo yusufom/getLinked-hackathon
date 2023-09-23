@@ -13,18 +13,18 @@ function Faqs() {
         <section name={`/#faqs`} id='faqs' className='relative '>
             <ColoredStars className={`left-[15.5%] top-[9%] scale-75`} />
 
-            <div class="bg-purpleHero flex w-[100px] h-[100px] md:w-[300px] md:h-[300px] right-[0%] blur-[80px] md:blur-[150px]  rounded-full -top-[40%] absolute z-[-2]" ></div>
-            <div className='max-w-[1512px] mx-auto px-[128px] mt-[43px] mb-[63px]'>
+            <div className="bg-purpleHero flex w-[100px] h-[100px] md:w-[300px] md:h-[300px] right-[0%] blur-[80px] md:blur-[150px]  rounded-full -top-[40%] absolute z-[-2]" ></div>
+            <div className='max-w-[1512px] mx-auto lg:px-[128px] px-[33px] mt-[43px] mb-[63px]'>
 
-                <div className='flex justify-between items-center'>
-                    <div className='max-w-[427px]'>
-                        <div>
-                            <h2 className='max-w-[253px] font-Clash text-[32px] font-bold'>Frequently Ask <span className='text-primary'>Question</span></h2>
-                            <p className='max-w-[342px] text-sm leading-[27.5px] mt-4'>We got answers to the questions that you might
+                <div className='flex lg:flex-row flex-col lg:justify-between lg:items-center gap-y-[66px]'>
+                    <div className='lg:max-w-[427px]'>
+                        <div className='w-full text-center'>
+                            <h2 className='lg:max-w-[253px] max-w-[158px] mx-auto font-Clash lg:text-[32px] text-xl font-bold'>Frequently Ask <span className='text-primary'>Question</span></h2>
+                            <p className='max-w-[342px] text-xs lg:text-sm leading-[27.5px] mt-4'>We got answers to the questions that you might
                                 want to ask about getlinked Hackathon 1.0</p>
                         </div>
 
-                        <div className='mt-[70px] w-[427px] space-y-[25px]'>
+                        <div className='mt-[70px] lg:w-[427px] space-y-[25px]'>
                             <Accordion title={`Can i work on a project I started before the hackathon?`} panel={`panel0`}
                                 openPanel={openPanel}
                                 setOpenPanel={setOpenPanel}>
