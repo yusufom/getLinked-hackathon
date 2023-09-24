@@ -18,7 +18,7 @@ function Rules() {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ type: "spring", duration: 2 }}
                         viewport={{ once: true }}>
-                        <h2 className='lg:text-[32px] text-xl font-Clash font-bold max-w-[170px] mx-auto lg:mx-0'>Rules and <span className='text-primary'>Guidelines</span></h2>
+                        <h2 className='lg:text-[32px] text-xl font-Clash font-bold max-w-[170px] mx-auto lg:mx-0 text-center lg:text-left'>Rules and <span className='text-primary'>Guidelines</span></h2>
 
                         <p className='mt-4 lg:text-sm text-xs font-normal text-center lg:text-left leading-[27.5px] max-w-[300px] lg:max-w-none mx-auto lg:mx-0'>Our tech hackathon is a melting pot of visionaries, and its purpose is as
                             clear as day: to shape the future. Whether you're a coding genius, a

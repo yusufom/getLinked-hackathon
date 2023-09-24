@@ -17,6 +17,10 @@ function Navbar({ landing }) {
     function handleClickOpen() {
         setOpen(set => !set)
     }
+
+    function handleClickClose() {
+        setOpen(false)
+    }
     const location = useLocation()
     const navigate = useNavigate();
 
@@ -66,8 +70,16 @@ function Navbar({ landing }) {
                         }
                     </ul>
 
-                    <NavLink to={`/register`} className='text-base leading-normal py-4 px-[52px] bg-primaryLinear rounded hover:-translate-y-1 transition-all hover:scale-105'>
-                        <button >Register</button>
+                    <NavLink to={`/register`} >
+                        {({ isActive, isPending }) => (
+                            isActive ?
+                                <div className="bg-primaryLinear rounded p-0.5 hover:-translate-y-1 transition-all hover:scale-105">
+                                    <button className="rounded bg-[#150E28] text-[13px] py-4 px-[52px] text-base leading-normal">Register</button>
+                                </div>
+                                :
+                                <button className="text-base leading-normal py-4 px-[52px] bg-primaryLinear rounded hover:-translate-y-1 transition-all hover:scale-105" >Register</button>
+
+                        )}
                     </NavLink>
 
                 </div>
@@ -88,16 +100,16 @@ function Navbar({ landing }) {
 
                         navLinks.map((res, index) => (
                             res.routeLink ?
-                                <NavLink onClick={handleClickOpen} to={res.href} smooth={true} className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "font-base font-normal leading-normal cursor-pointer bg-btnlinear text-transparent" : "font-base font-normal leading-normal cursor-pointer bg-clip-text hover:bg-btnlinear hover:text-transparent transition-all"}>
+                                <NavLink onClick={handleClickClose} to={res.href} smooth={true} className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "font-base font-normal leading-normal cursor-pointer bg-btnlinear text-transparent" : "font-base font-normal leading-normal cursor-pointer bg-clip-text hover:bg-btnlinear hover:text-transparent transition-all"}>
                                     <li>{res.name}</li>
                                 </NavLink>
                                 :
-                                <Link onClick={handleClickOpen} to={res.href} smooth={true} duration={1000} delay={200} spy={true} ><li className='font-base font-normal leading-normal cursor-pointer bg-clip-text hover:bg-btnlinear hover:text-transparent transition-all'>{res.name}</li></Link>
+                                <Link onClick={handleClickClose} to={res.href} smooth={true} duration={1000} delay={200} spy={true} ><li className='font-base font-normal leading-normal cursor-pointer bg-clip-text hover:bg-btnlinear hover:text-transparent transition-all'>{res.name}</li></Link>
 
                         ))
                         :
                         navLinks.map((res, index) => (
-                            <NavLink onClick={handleClickOpen} to={res.href} smooth={true} className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-btnlinear text-transparent bg-clip-text font-base font-normal leading-normal cursor-pointer" : "font-base font-normal leading-normal cursor-pointer bg-clip-text hover:bg-btnlinear hover:text-transparent transition-all"}>
+                            <NavLink onClick={handleClickClose} to={res.href} smooth={true} className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-btnlinear text-transparent bg-clip-text font-base font-normal leading-normal cursor-pointer" : "font-base font-normal leading-normal cursor-pointer bg-clip-text hover:bg-btnlinear hover:text-transparent transition-all"}>
                                 <li>{res.name}</li>
                             </NavLink>
                         ))
@@ -105,8 +117,16 @@ function Navbar({ landing }) {
 
                     }
                     <div className='mt-[9px]'>
-                        <NavLink onClick={handleClickOpen} to={`/register`} className='text-base leading-normal py-4 px-[52px] bg-primaryLinear rounded hover:-translate-y-1 transition-all hover:scale-105'>
-                            <button >Register</button>
+                        <NavLink onClick={handleClickClose} to={`/register`} >
+                            {({ isActive, isPending }) => (
+                                isActive ?
+                                    <div className="bg-primaryLinear rounded p-0.5 hover:-translate-y-1 transition-all hover:scale-105">
+                                        <button className="text-base leading-normal rounded bg-[#150E28] text-[13px] py-4 px-[52px]">Register</button>
+                                    </div>
+                                    :
+                                    <button className="text-base leading-normal py-4 px-[52px] bg-primaryLinear rounded hover:-translate-y-1 transition-all hover:scale-105" >Register</button>
+
+                            )}
                         </NavLink>
                     </div>
                 </ul>

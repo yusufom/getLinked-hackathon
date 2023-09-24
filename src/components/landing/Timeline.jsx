@@ -14,8 +14,8 @@ const TimelineItem = ({ date, title, number, isEven, description }) => {
                     <h3 className={`text-2xl  text-primary font-bold leading-normal ${isEven ? 'text-left' : 'text-right'}`}>{title}</h3>
                     <p className={`${isEven ? 'text-left mr-auto' : 'text-right ml-auto'} max-w-[436px]   text-base leading-[23.926px] mt-3`}>{description}</p>
                 </motion.div>
-                <motion.div className='relative' initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                <motion.div className='relative' initial={{ opacity: 0, y: -50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     transition={{ type: "spring", duration: 2 }}
                     viewport={{ once: true }}>
                     <div className="absolute border-primary h-20 border -top-24 left-1/2 -z-40"></div>
@@ -99,11 +99,14 @@ function Timeline() {
             <WhiteStars className={`right-[25.5%] top-[50%] scale-75`} />
             <GreyStars className={`left-[20%] bottom-[3%] scale-75`} />
             <div className='max-w-[1512px] mx-auto lg:px-[128px] px-[33px] mt-[72px] mb-[110px]'>
-                <div className='text-center'>
+                <motion.div className='text-center' initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ type: "spring", duration: 2 }}
+                    viewport={{ once: true }}>
                     <h2 className='font-Clash lg:text-[32px] text-xl font-bold'>Timeline</h2>
                     <p className='text-sm lg:max-w-[346px]  lg:mx-auto mt-3 w-full'>Here is the breakdown of the time we anticipate
                         using for the upcoming event.</p>
-                </div>
+                </motion.div>
 
                 <div className='mt-[170px] container mx-auto space-y-[47px] relative'>
 

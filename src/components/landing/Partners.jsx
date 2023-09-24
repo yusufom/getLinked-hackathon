@@ -21,43 +21,60 @@ function Partners() {
             <div className="bg-purpleHero flex w-[100px] h-[100px] md:w-[300px] md:h-[300px] right-[0%] blur-[80px] md:blur-[150px]  rounded-full -bottom-[10%] absolute z-[1]" ></div>
             <div className="bg-purpleHero flex w-[100px] h-[100px] md:w-[500px] md:h-[300px] left-[0%] blur-[80px] md:blur-[150px]  rounded-full top-[3%] absolute z-[1]" ></div>
             <div className='max-w-[1512px] mx-auto lg:px-[128px] px-[33px] lg:mt-[114px] mt-[41px] lg:pb-[150px] gap-x-10'>
-                <div className='text-center'>
+                <motion.div className='text-center' initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ type: "spring", duration: 2 }}
+                    viewport={{ once: true }}>
                     <h2 className='font-Clash lg:text-[32px] text-xl font-bold leading-[27px]'>Partners and Sponsors</h2>
                     <p className='mt-[22px] lg:text-sm text-xs lg:leading-[27px] leading-5 max-w-[452px] mx-auto'>Getlinked Hackathon 1.0 is honored to have the following major
                         companies as its partners and sponsors</p>
 
-                </div>
+                </motion.div>
 
                 <motion.div className='mt-[65px] lg:py-[143px] py-[30px] lg:px-[176px] px-[47px] grid grid-cols-3 lg:mb-[272px] mb-[104px] border border-primary rounded-sm'
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    transition={{ type: "spring", duration: 2 }}
-                    viewport={{ once: true }}
                 >
 
-                    <div className='box box-top p-4'>
+                    <motion.div className='box box-top p-4' initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ type: "spring", duration: 2 }}
+                        viewport={{ once: true }}>
                         <img src={Liberty} alt="" />
-                    </div>
+                    </motion.div>
 
-                    <div className='box box-top p-4'>
+                    <motion.div className='box box-top p-4' initial={{ opacity: 0, y: -50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ type: "spring", duration: 2 }}
+                        viewport={{ once: true }}>
                         <img src={LibertyPay} alt="" />
-                    </div>
+                    </motion.div>
 
-                    <div className='box box-top-right p-4'>
+                    <motion.div className='box box-top-right p-4' initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ type: "spring", duration: 2 }}
+                        viewport={{ once: true }}>
                         <img src={Winwise} alt="" />
-                    </div>
+                    </motion.div>
 
-                    <div className='box box-bottom p-4'>
+                    <motion.div className='box box-bottom p-4' initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ type: "spring", duration: 2 }}
+                        viewport={{ once: true }}>
                         <img src={Whisper} alt="" />
-                    </div>
+                    </motion.div>
 
-                    <div className='box box-bottom p-4'>
+                    <motion.div className='box box-bottom p-4' initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ type: "spring", duration: 2 }}
+                        viewport={{ once: true }}>
                         <img src={Paybox} alt="" />
-                    </div>
+                    </motion.div>
 
-                    <div className='box p-4'>
+                    <motion.div className='box p-4' initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ type: "spring", duration: 2 }}
+                        viewport={{ once: true }}>
                         <img src={Vuzual} alt="" />
-                    </div>
+                    </motion.div>
 
                 </motion.div>
             </div>
