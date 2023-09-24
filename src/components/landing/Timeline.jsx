@@ -31,8 +31,8 @@ const TimelineItem = ({ date, title, number, isEven, description }) => {
                 </motion.div>
 
             </div>
-            <motion.div className={`flex lg:hidden mt-6 mb-6 justify-center gap-x-[10px] items-end`} initial={{ opacity: 0, x: -150 }}
-                whileInView={{ opacity: 1, x: 0 }}
+            <motion.div className={`flex lg:hidden mt-6 mb-6 justify-center gap-x-[10px] items-end`} initial={{ opacity: 0, y: -150 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ type: "spring", duration: 2 }}
                 viewport={{ once: true }}>
                 <div className='relative'>

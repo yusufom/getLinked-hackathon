@@ -38,7 +38,7 @@ function Navbar({ landing }) {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", duration: 2 }}
             viewport={{ once: true }}>
-            <div className='flex justify-between items-center lg:pt-[63px] pt-[30px] lg:pb-[25px] pb-[23px] lg:px-[128px] px-[48px]'>
+            <div className='flex justify-between items-center lg:pt-[63px] pt-[30px] lg:pb-[25px] pb-[23px] lg:px-[128px] px-[48px] overflow-hidden'>
                 <NavLink to={`/`} className={`z-[70]`}>
                     <p className='font-Clash lg:text-4xl text-base font-bold leading-normal'>get<span className='text-primary'>linked</span></p>
                 </NavLink>
@@ -82,22 +82,22 @@ function Navbar({ landing }) {
                 </div>
             </div>
 
-            <div className={`z-50 fixed top-0 px-[33px] w-full overflow-hidden bg-[#150E28] ${open ? 'h-screen' : 'h-0'} transition-all`}>
+            <div className={`z-[99] px-[33px] w-full overflow-hidden block bg-[#150E28] ${open ? 'h-screen' : 'h-0'} transition-all`}>
                 <ul className='flex flex-col gap-y-5 pt-[100px]'>
                     {landing ?
 
                         navLinks.map((res, index) => (
                             res.routeLink ?
-                                <NavLink to={res.href} smooth={true} className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "font-base font-normal leading-normal cursor-pointer bg-btnlinear text-transparent" : "font-base font-normal leading-normal cursor-pointer bg-clip-text hover:bg-btnlinear hover:text-transparent transition-all"}>
+                                <NavLink onClick={handleClickOpen} to={res.href} smooth={true} className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "font-base font-normal leading-normal cursor-pointer bg-btnlinear text-transparent" : "font-base font-normal leading-normal cursor-pointer bg-clip-text hover:bg-btnlinear hover:text-transparent transition-all"}>
                                     <li>{res.name}</li>
                                 </NavLink>
                                 :
-                                <Link to={res.href} smooth={true} duration={1000} delay={200} spy={true} ><li className='font-base font-normal leading-normal cursor-pointer bg-clip-text hover:bg-btnlinear hover:text-transparent transition-all'>{res.name}</li></Link>
+                                <Link onClick={handleClickOpen} to={res.href} smooth={true} duration={1000} delay={200} spy={true} ><li className='font-base font-normal leading-normal cursor-pointer bg-clip-text hover:bg-btnlinear hover:text-transparent transition-all'>{res.name}</li></Link>
 
                         ))
                         :
                         navLinks.map((res, index) => (
-                            <NavLink to={res.href} smooth={true} className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-btnlinear text-transparent bg-clip-text font-base font-normal leading-normal cursor-pointer" : "font-base font-normal leading-normal cursor-pointer bg-clip-text hover:bg-btnlinear hover:text-transparent transition-all"}>
+                            <NavLink onClick={handleClickOpen} to={res.href} smooth={true} className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-btnlinear text-transparent bg-clip-text font-base font-normal leading-normal cursor-pointer" : "font-base font-normal leading-normal cursor-pointer bg-clip-text hover:bg-btnlinear hover:text-transparent transition-all"}>
                                 <li>{res.name}</li>
                             </NavLink>
                         ))
@@ -105,7 +105,7 @@ function Navbar({ landing }) {
 
                     }
                     <div className='mt-[9px]'>
-                        <NavLink to={`/register`} className='text-base leading-normal py-4 px-[52px] bg-primaryLinear rounded hover:-translate-y-1 transition-all hover:scale-105'>
+                        <NavLink onClick={handleClickOpen} to={`/register`} className='text-base leading-normal py-4 px-[52px] bg-primaryLinear rounded hover:-translate-y-1 transition-all hover:scale-105'>
                             <button >Register</button>
                         </NavLink>
                     </div>

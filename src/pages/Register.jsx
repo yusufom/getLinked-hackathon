@@ -48,6 +48,29 @@ const sizeMenu = [
 function Register() {
   const [show, setShow] = React.useState(false)
   const [error, setError] = React.useState(false)
+  const [errorText, setErrorText] = React.useState(``)
+  const [visible, setVisible] = React.useState(false)
+
+  const toggleVisible = () => {
+    const scrolled = document.documentElement.scrollTop;
+    if (scrolled > 300) {
+      setVisible(true)
+    }
+    else if (scrolled <= 300) {
+      setVisible(false)
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+      /* you can also use 'auto' behaviour
+         in place of 'smooth' */
+    });
+  };
+
+  window.addEventListener('scroll', toggleVisible);
 
   const formik = useFormik(
     {
@@ -55,15 +78,18 @@ function Register() {
       validationSchema: RegisterValidationSchema,
       enableReinitialize: true,
       onSubmit: async (values) => {
+        console.log(values)
         try {
-          const response = await axios.post(`https://backend.getlinked.ai/hackathon/registration/`, values,
+          const response = await axios.post(`https://backend.getlinked.ai/hackathon/registration`, values,
 
           );
           console.log(response.data)
+          formik.resetForm()
           setShow(true)
         } catch (error) {
           console.error(error);
           setError(true)
+          setErrorText(error.response.data)
 
 
         }
@@ -79,6 +105,11 @@ function Register() {
 
 
       <main className='relative'>
+        <button onClick={scrollToTop} className={`w-10 h-10 ${visible ? 'fixed' : 'hidden'} fixed bottom-10 right-10 bg-primary rounded-full z-[99] transition-all flex justify-center items-center`}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+          </svg>
+        </button>
         <ColoredStars className={`left-[17%] top-[17%] scale-75`} />
         <GreyStars className={`left-[19.4%] bottom-[3%] scale-75`} />
         <ColoredStars className={`left-[44%] top-[77%] scale-75`} />
@@ -126,7 +157,7 @@ function Register() {
                 <div className='mt-[33px]'>
                   {error &&
 
-                    <p className='text-sm text-red'>Something went wrong, Please try again later</p>
+                    <p className='text-sm text-red-700'>{errorText}</p>
                   }
                   <form action="" method="post">
                     <div className='grid lg:grid-cols-2 grid-cols-1 gap-8'>

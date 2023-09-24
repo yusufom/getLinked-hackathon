@@ -13,47 +13,32 @@ function InputText({ label, name, placeholder, type, onChange, error, errorText 
 }
 
 
-function InputSelect({ label, name, ops, options, error, errorText }) {
-    const [isOpen, setIsOpen] = React.useState(false);
-    const [selectedOption, setSelectedOption] = React.useState(null);
+function InputSelect({ label, name, ops, options, error, errorText, onChange, value }) {
+    // const [isOpen, setIsOpen] = React.useState(false);
+    // const [selectedOption, setSelectedOption] = React.useState(null);
 
-    const toggleDropdown = () => {
-        setIsOpen(!isOpen);
-    };
+    // const toggleDropdown = () => {
+    //     setIsOpen(!isOpen);
+    // };
 
-    const handleOptionClick = (option) => {
-        setSelectedOption(option);
-        setIsOpen(false);
-    };
+    // const handleOptionClick = (option) => {
+    //     setSelectedOption(option);
+    //     setIsOpen(false);
+    // };
 
     return (
-        <div className='w-full flex flex-col relative '>
+        <div className='w-full '>
             <label htmlFor={name} className='text-sm'>{label}</label>
 
-            <div role="button" className="bg-transparent border rounded-[4px] h-[47px] w-full py-2 pl-[25px] pr-[14px] mt-[11px] text-gray-700 focus:outline-none focus:ring focus:border-blue-300 flex items-center justify-between shadow-register"
-                onClick={toggleDropdown}>
-                <p className='text-white'>{selectedOption || ops}</p>
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9" fill="none">
-                    <path d="M1 1L6.5 7L11.5 1" stroke="white" strokeWidth="2" />
-                </svg>
-            </div>
-            {isOpen && (
-                <div className="absolute left-0 top-16 mt-2 -bottom-[47px] rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 w-full h-full">
-                    <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                        {options.map((res, index) => (
-                            <button
-                                key={index}
-                                onClick={() => handleOptionClick(res.id)}
-                                className="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-600 focus:outline-none focus:bg-blue-100 text-left"
-                                role="menuitem"
-                            >
-                                {res.name}
-                            </button>
-                        ))}
-                    </div>
-                </div>
-            )}
+            <select value={value} name={name} onChange={onChange} placeholder={ops} className="bg-transparent border rounded-[4px] placeholder:text-white placeholder:opacity-25 w-full py-2 pl-[25px] pr-[14px] mt-[11px] text-gray-700 focus:outline-none focus:ring focus:border-blue-300 flex items-center justify-between shadow-register">
+                <options value={``}>{label}</options>
+                {options.map((res, index) => (
+                    <option value={res.id}>{res.name}</option>
+                ))}
+            </select>
+            {error &&
+                <p className='text-red-700 text-xs mt-1'>{errorText}</p>
+            }
 
         </div>
     )

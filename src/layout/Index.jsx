@@ -29,7 +29,7 @@ function Layout() {
 
     return (
         <>
-            <header>
+            <header className='sticky'>
 
                 <Navbar landing={true} />
             </header>
